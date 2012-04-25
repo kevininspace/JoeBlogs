@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using JoeBlogs.XmlRpcInterfaces;
 
 namespace JoeBlogs
 {
@@ -216,8 +217,6 @@ namespace JoeBlogs
                     permaLink = input.Permalink
                 };
             }
-
-
         }
 
 
@@ -264,6 +263,20 @@ namespace JoeBlogs
                 return new Post
                 {
                     PostID = input.postid,
+                    Body = input.description,
+                    Categories = input.categories,
+                    DateCreated = input.dateCreated,
+                    Tags = input.mt_keywords.Split(','),
+                    Title = input.title,
+                    Permalink = input.permaLink
+                };
+            }
+
+            public static Post Post(XmlRpcMultiplePost input)
+            {
+                return new Post
+                {
+                    PostID = int.Parse(input.postid),
                     Body = input.description,
                     Categories = input.categories,
                     DateCreated = input.dateCreated,
@@ -422,6 +435,8 @@ namespace JoeBlogs
                     URL = input.url
                 };
             }
+
+
         }
     }
 }
