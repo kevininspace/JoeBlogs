@@ -53,9 +53,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CookComputing.XmlRpcV2, Version=2.3.2.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\CookComputing.XmlRpcV2.dll</HintPath>
+    <Reference Include="CookComputing.XmlRpcV2, Version=2.5.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
+      <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -78,9 +77,11 @@
     <Compile Include="classes\Post.cs" />
     <Compile Include="classes\PostStatusList.cs" />
     <Compile Include="classes\TagInfo.cs" />
+    <Compile Include="classes\Term.cs" />
     <Compile Include="classes\UserBlog.cs" />
     <Compile Include="classes\UserInfo.cs" />
     <Compile Include="helpers\EnumsHelper.cs" />
+    <Compile Include="helpers\FileSystemHelper.cs" />
     <Compile Include="helpers\ImagesUtility.cs" />
     <Compile Include="helpers\StringExtensionMethods.cs" />
     <Compile Include="Mapper.cs" />
@@ -111,7 +112,9 @@
     <Compile Include="xmlRpcStructs\PageTemplate.cs" />
     <Compile Include="xmlRpcStructs\Post.cs" />
     <Compile Include="xmlRpcStructs\PostStatusList.cs" />
+    <Compile Include="xmlRpcStructs\RecentPost.cs" />
     <Compile Include="xmlRpcStructs\TagInfo.cs" />
+    <Compile Include="xmlRpcStructs\Term.cs" />
     <Compile Include="xmlRpcStructs\UserBlog.cs" />
     <Compile Include="xmlRpcStructs\UserInfo.cs" />
   </ItemGroup>
@@ -131,6 +134,11 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -63,7 +63,7 @@ namespace JoeBlogs.XmlRpcInterfaces
         int NewComment(int blogId, string username, string password, string post_id, XmlRpcComment coment);
 
         [XmlRpcMethod("wp.getCommentStatusList")]
-        string[] GetCommentStatusList(int blogId, string username, string password, string post_id);
+        XmlRpcStruct GetCommentStatusList(int blogId, string username, string password, string post_id);
 
         [XmlRpcMethod("wp.getPage")]
         XmlRpcPage GetPage(int blogId, string username, string password, string pageId);
@@ -82,6 +82,9 @@ namespace JoeBlogs.XmlRpcInterfaces
 
         [XmlRpcMethod("wp.editPage")]
         bool EditPage(int blogId, string username, string password, int page_id, XmlRpcPage content);
+
+        [XmlRpcMethod("wp.editPost")]
+        bool EditPost(int postid, string username, string password, XmlRpcPost content, bool publish);
 
         [XmlRpcMethod("wp.getAuthors")]
         XmlRpcAuthor[] GetAuthors(int blogId, string username, string password);
